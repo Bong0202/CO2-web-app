@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+/* example change for intro page */
+
+.intro p {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.intro img {
+  border-radius: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  margin: auto;
+}
+
+.table > img {
+  border-radius: 4rem;
+  margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+/* change the color of navigation bar 
+.navbar {
+  background-color: red;
+}
+*/ 
+
+* {
+  font-family: "Nunito";
+}

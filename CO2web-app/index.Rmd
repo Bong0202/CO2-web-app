@@ -1,0 +1,57 @@
+---
+title: "Exploratory Analysis of Food Consumption and CO2 Emissions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("Summary.R")
+source("table.R")
+source("chart1.R")
+source("chart2.R")
+source("chart3.R")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+- This data set we’ve decided to use is from the **Food and Agriculture Organization of the UN (FAO)**. The data was collected to _analyse_ and _compare_ food consumption in 130 countries through 11 different food types in 2018. Nu3 is then able to _calculate_ the amount of **carbon dioxide emissions** per person from these 130 countries, to figure out which _diets_ are the **most sustainable** in certain countries. Further analysis is divided into 3 parts: Summary, Table, and Charts, in which: _Summary_ takes care of the summarized information (highest/ lowest level) for each variable in the data set (using **dplyr**). _Table_ shows the summarized totals for each food type (using **kable**). _Charts_ are displayed in different types: _pie, bar, scatter-plot_, to find the top 10 countries and which product- based contribute the most to the co2 emission (using **ggplot2, tidyverse**)
+    
+```{r echo=FALSE}
+
+```
+
+## Summary
+- In this summary section, we've created a list called: summary_info, which includes 5 variables: _highest_co2_country, highest_food_consumed, mean_consumption, mean_co2_emmission, lowest_co2_emission_. The first variable: **highest_co2_country**, in which represents the country has the highest CO2 emissions per person is `r highest_co2_country`. Next, the second variable: **highest_food_consumed**, represents te food category has highest consumption is `r highest_food_consumed`. Following that, the third variable: **mean_consumption**, is the mean food consumption of `r mean_consumption`; and fourth is mean co2 emmission (**mean_co2_emmission**): `r mean_co2_emmission`. Last but not least, the lowest number of co2 emmission: **lowest_co2_emission**, is `r lowest_co2_emission`.
+ 
+ 
+```{r echo=FALSE}
+
+```
+## Table
+```{r echo=FALSE}
+knitr::kable(summary_table)
+```
+The table provides the total consumption and total CO2 emission (of all 130 countries combined) for each of the 11 food categories, which is then sorted by highest to lowest total CO2 emission. From the table, we can see that “Beef” is the food category that has the highest total CO2 emission by far, followed by “Milk - inc. cheese”. We noticed that when comparing meat products, poultry/fish vs. beef, poultry/fish has a much lower CO2 emission despite a higher total consumption. Meanwhile, the non-animal products (rice, soybeans, etc) rank much lower in total CO2 emission overall. This suggests that meat-heavy diets loaded with especially cow products (beef and dairy), will have a higher carbon footprint and thus contribute more to climate change.
+
+While the table above revealed to us the major difference there is between CO2 emissions from animal products and non-animal products numerically, the following three charts will help us further investigate this topic visually.
+
+## Chart 1
+```{r echo=FALSE}
+pie_chart
+```
+
+This pie chart shows the proportion of CO2 emission that each food category contributes to the total CO2 emission in the U.S. Visually, the “Beef” and “Milk - inc. cheese” segments stand out the most, occupying 65% and 21% of the pie chart respectively. This reinforces the insight revealed above by the table--that beef and dairy products (i.e., cow products) play the largest role in contributing to the total CO2 emission.
+
+## Chart 2
+```{r echo=FALSE}
+bar_chart
+```
+
+The bar chart displays the top ten countries that have the highest total CO2 emissions which was calculated by summing the individual CO2 emissions of all 11 food categories. Since the 11 categories can be further categorized as an animal product or non-animal product, each bar was broken down into these two components. For every country's bar, it's clear that animal products account for the overwhelming majority of CO2 emissions. This is consistent with our observations thus far.
+
+## Chart 3
+```{r echo=FALSE}
+scatter_plot
+```
+
+The purpose of this chart is to explore the broader problem domain of climate change and CO2 emissions in general. And in order to understand the problem, we must look at the trends over time. This scatter plot examines the CO2 emissions in the U.S. over the years and shows that there has been a high rise in CO2 emissions. So far, we observed that animal products, especially ones from cattle, produces a high amount of CO2 per person in the U.S.. If we scale the numbers describing the per person contribution to CO2 emission by the total U.S. population, then its easy to see that food consumption does play a role in the U.S's carbon footprint. This is without even taking into account the impact from the food supply chain that takes place before it even reaches a consumer's mouth.
