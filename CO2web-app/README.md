@@ -1,6 +1,6 @@
 # Final Project
 
-By: Han Nguyen, Linh Nguyen, Anna Chen, and Bryce Nguyen
+By: Linh Nguyen
 
 ## Domain of interest
 As we've discussed, data science can expose underlying patterns in any domain that uses or collects data (which is nearly any domain). Anything from the forced relocation of homeless individuals (Links to an external site.) to how people gender representation (Links to an external site.) in the media, data can expose interesting (and actionable) patterns. In this section, you'll identify a domain that you are interested in (e.g., music, education, dance, immigration -- any field of your interest) and answer the following questions in your README.md file:
